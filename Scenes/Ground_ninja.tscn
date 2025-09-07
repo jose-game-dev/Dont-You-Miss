@@ -1,0 +1,212 @@
+[gd_scene load_steps=27 format=3 uid="uid://dl6gwej61u4rq"]
+
+[ext_resource type="Texture2D" uid="uid://dpejd2n6iieu3" path="res://Assets/Demon_sword/Sword/Sword.png" id="1_218or"]
+[ext_resource type="Script" uid="uid://3xibokrc6l6y" path="res://Scenes/ground_ninja.gd" id="1_lig02"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lig02"]
+size = Vector2(60, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lig02"]
+atlas = ExtResource("1_218or")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dj8x"]
+atlas = ExtResource("1_218or")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlck8"]
+atlas = ExtResource("1_218or")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f1x1"]
+atlas = ExtResource("1_218or")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aysvm"]
+atlas = ExtResource("1_218or")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62hlh"]
+atlas = ExtResource("1_218or")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwq1k"]
+atlas = ExtResource("1_218or")
+region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lre5d"]
+atlas = ExtResource("1_218or")
+region = Rect2(576, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkrwe"]
+atlas = ExtResource("1_218or")
+region = Rect2(704, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w50xg"]
+atlas = ExtResource("1_218or")
+region = Rect2(832, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc6mw"]
+atlas = ExtResource("1_218or")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5p8l"]
+atlas = ExtResource("1_218or")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgb3m"]
+atlas = ExtResource("1_218or")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1xhb"]
+atlas = ExtResource("1_218or")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjtib"]
+atlas = ExtResource("1_218or")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqqfq"]
+atlas = ExtResource("1_218or")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5w5v"]
+atlas = ExtResource("1_218or")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx7e7"]
+atlas = ExtResource("1_218or")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns5sf"]
+atlas = ExtResource("1_218or")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33gkx"]
+atlas = ExtResource("1_218or")
+region = Rect2(640, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lknt"]
+atlas = ExtResource("1_218or")
+region = Rect2(768, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80eom"]
+atlas = ExtResource("1_218or")
+region = Rect2(896, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0x5mw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lig02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dj8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlck8")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f1x1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aysvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62hlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwq1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lre5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hkrwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w50xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc6mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5p8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgb3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1xhb")
+}],
+"loop": true,
+"name": &"Evade",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjtib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqqfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5w5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx7e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns5sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33gkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lknt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80eom")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 10.0
+}]
+
+[node name="Ground_Ninja" type="CharacterBody2D"]
+script = ExtResource("1_lig02")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -30.5)
+shape = SubResource("RectangleShape2D_lig02")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -30)
+scale = Vector2(2.20313, 1.59375)
+sprite_frames = SubResource("SpriteFrames_0x5mw")
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.595508
+
+[node name="MoveTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 1.2
+autostart = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-2.5, -21.5)
+scale = Vector2(2.05, 1.85)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="on_screen_notifier_2d_screen_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_notifier_2d_screen_exited"]
