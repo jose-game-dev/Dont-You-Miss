@@ -4,14 +4,16 @@ extends Node2D
 @onready var score_node: Label = $CanvasLayer/score
 @onready var music: AudioStreamPlayer = $"Music"
 
-var bullet_count = 6:
+var bullet_count = 12:
 	set(value):
-		#bullet_node.text = "BULLETS: "
-		if value >= 0:
+		if value > 0:
 			bullet_count = value
 			bullet_node.text = "BULLETS: " + str(value)
 		else:
+			bullet_count = 0
+			bullet_node.text = "BULLETS: 0"
 			_lose()
+
 
 var Round = 1:
 	set(value):
@@ -66,8 +68,6 @@ func _spawn_enemy():
 		alive_enemies += 1
 
 func _on_enemy_dead():
-	
-	
 	if in_round_transitions:
 		return 
 		
@@ -76,16 +76,17 @@ func _on_enemy_dead():
 	
 	if alive_enemies == 0:
 		in_round_transitions = true 
-#		Progression: 4 -> 6 -> 8 -> 10 -> ...
+		
 		if Round == 1:
-			next_round_enemy_count = 4
+			next_round_enemy_count = 3
 		else:
-			next_round_enemy_count += 1
+			next_round_enemy_count = min(10, next_round_enemy_count + 1)
 		
 		Round += 1
-		bullet_count = 6
+		bullet_count = 12
 		await get_tree().create_timer(1).timeout
 		_spawn_enemy()
+
 
 func _input(event):
 	if event.is_action_pressed("shoot"):
@@ -100,4 +101,4 @@ func _lose():
 		$Timer.start()
 
 func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
