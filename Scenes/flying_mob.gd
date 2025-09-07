@@ -44,7 +44,7 @@ func death():
 	#collision_shape_2d.disabled
 	#wait one second before applying Vy (dramatic effect)
 	await get_tree().create_timer(1).timeout
-	velocity = Vector2.DOWN * 100
+	velocity = Vector2.DOWN * 1000
 	#animation_player.reset_on_save/
 
 

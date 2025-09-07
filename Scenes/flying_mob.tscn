@@ -185,6 +185,7 @@ _data = {
 }
 
 [node name="flying_mob" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_v88e1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -5,30 +5,30 @@ extends Node2D
 @onready var music: AudioStreamPlayer = $"Music"
 
 var bullet_count = 6:
-	
 	set(value):
-		bullet_node.text = "Bullets "
+		#bullet_node.text = "BULLETS: "
 		if value >= 0:
 			bullet_count = value
-			bullet_node.text = "Bullets: " + str(value)
+			bullet_node.text = "BULLETS: " + str(value)
 		else:
 			_lose()
 
 var Round = 1:
 	set(value):
-		bullet_node.text = "Round: "
+		#Round_node.text = "ROUND: "
 		Round = value
-		Round_node.text = "Round: " + str(value)
+		Round_node.text = "ROUND: " + str(value)
 
 var score = 0:
 	set(value):
+		#score_node.text = "SCORE: "
 		score = value
-		score_node.text = str(value)
+		score_node.text = "SCORE: " + str(value)
 
 @export var flying_mob_node: PackedScene
 
 var alive_enemies: int = 0
-var next_round_enemy_count: int = 3 
+var next_round_enemy_count: int = 3
 var spawn_positions := [Vector2(160,90), Vector2(200,100), Vector2(120,110), Vector2(180,120)]
 
 func _ready():
@@ -38,22 +38,22 @@ func _ready():
 	music.play()
 
 func _default_display():
-	bullet_node.text = str(bullet_count)
-	Round_node.text = str(Round)
-	score_node.text = str(score)
+	bullet_node.text = "BULLETS: " + str(bullet_count)
+	Round_node.text = "ROUND: " + str(Round)
+	score_node.text = "SCORE: " + str(score)
 
 func _spawn_enemy():
 	alive_enemies = next_round_enemy_count
 	for i in range(next_round_enemy_count):
 		var enemy = flying_mob_node.instantiate()
-		enemy.speed = 100 
+		enemy.speed = 100
 		enemy.position = spawn_positions[i % spawn_positions.size()]
 		enemy.next_round.connect(_on_enemy_dead)
 		get_tree().current_scene.add_child(enemy)
 
 func _on_enemy_dead():
 	alive_enemies -= 1
-	score += 10
+	score += 100
 	if alive_enemies <= 0:
 		if next_round_enemy_count == 3:
 			next_round_enemy_count = 4

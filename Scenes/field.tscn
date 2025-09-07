@@ -30,7 +30,7 @@ position = Vector2(576, -37.5)
 shape = SubResource("RectangleShape2D_pkatj")
 
 [node name="bottom" type="CollisionShape2D" parent="Walls"]
-position = Vector2(576, 622.5)
+position = Vector2(577, 397)
 shape = SubResource("RectangleShape2D_8juqs")
 
 [node name="left" type="CollisionShape2D" parent="Walls"]
@@ -44,32 +44,32 @@ shape = SubResource("RectangleShape2D_bbyqf")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="bullet" type="Label" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 552.0
-offset_right = 128.0
-offset_bottom = 608.0
+offset_left = 13.0
+offset_top = 595.0
+offset_right = 125.0
+offset_bottom = 651.0
 scale = Vector2(1, 0.843072)
 text = "Bullets: "
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="round" type="Label" parent="CanvasLayer"]
 offset_left = 16.0
-offset_top = 536.0
+offset_top = 572.0
 offset_right = 75.0
-offset_bottom = 559.0
+offset_bottom = 595.0
 scale = Vector2(0.710697, 0.87091)
 text = "Round:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="score" type="Label" parent="CanvasLayer"]
-offset_left = 864.0
-offset_top = 544.0
-offset_right = 1009.0
-offset_bottom = 599.0
-scale = Vector2(1.47394, 1.08475)
-horizontal_alignment = 1
+offset_left = 991.0
+offset_top = 595.0
+offset_right = 1136.0
+offset_bottom = 650.0
+scale = Vector2(1.04302, 0.722237)
+text = "SCORE: "
+vertical_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
@@ -81,7 +81,7 @@ scale = Vector2(5.57942, 3.71595)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_fxj5q")
-volume_db = 6.667
+volume_db = 1.0
 autoplay = true
 
 [node name="Graphics_UI" type="Node" parent="."]
