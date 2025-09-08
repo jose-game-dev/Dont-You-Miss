@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyojqven2qjuo"]
 
 [ext_resource type="Script" uid="uid://cqi62r4724s7b" path="res://UI/main_menu.gd" id="1_b37jj"]
-[ext_resource type="Texture2D" uid="uid://6t43yfyev5wb" path="res://Assets/MainMenuBG.png" id="2_b37jj"]
+[ext_resource type="Texture2D" uid="uid://brxl8l5eyirui" path="res://Assets/MainMenuBG (1).png" id="2_b37jj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ script = ExtResource("1_b37jj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(580, 318.467)
-scale = Vector2(2.26563, 1.39043)
+scale = Vector2(1.12561, 0.731097)
 texture = ExtResource("2_b37jj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
