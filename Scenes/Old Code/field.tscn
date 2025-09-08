@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://fd3ptjavp13d"]
+[gd_scene load_steps=10 format=3 uid="uid://fd3ptjavp13d"]
 
-[ext_resource type="PackedScene" uid="uid://dadvjd1ba2lac" path="res://Scenes/flying_mob.tscn" id="1_8juqs"]
 [ext_resource type="Script" uid="uid://3vj8c1am7xvi" path="res://Scenes/field.gd" id="1_s1lr2"]
+[ext_resource type="Texture2D" uid="uid://dr7vsyf2p8wvj" path="res://Assets/NES - Duck Hunt - Backgrounds - Backgrounds.png" id="2_bbyqf"]
+[ext_resource type="Texture2D" uid="uid://b2nytmglwi0bi" path="res://Assets/NES - Duck Hunt - Backgrounds - Backgrounds (1).png" id="3_s1lr2"]
 [ext_resource type="PackedScene" uid="uid://di08e8c366qo7" path="res://Scenes/laugh_mob.tscn" id="5_fir65"]
-[ext_resource type="Texture2D" uid="uid://dx0lnuph1mkyb" path="res://Assets/HeatgameBackG.png" id="5_fxj5q"]
-[ext_resource type="AudioStream" uid="uid://4ynxl0s3uukv" path="res://Music/Metal song cgsaug2025.mp3" id="6_fxj5q"]
-[ext_resource type="Texture2D" uid="uid://b6vi072ivak14" path="res://Assets/ForegroundGameJam.png" id="6_xvgtc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkatj"]
 size = Vector2(1152, 75)
@@ -19,9 +17,11 @@ size = Vector2(52, 597)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbyqf"]
 size = Vector2(62, 597)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxj5q"]
+size = Vector2(1152, 18)
+
 [node name="Field" type="Node2D"]
 script = ExtResource("1_s1lr2")
-flying_mob_node = ExtResource("1_8juqs")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -30,7 +30,7 @@ position = Vector2(576, -37.5)
 shape = SubResource("RectangleShape2D_pkatj")
 
 [node name="bottom" type="CollisionShape2D" parent="Walls"]
-position = Vector2(577, 397)
+position = Vector2(576, 622.5)
 shape = SubResource("RectangleShape2D_8juqs")
 
 [node name="left" type="CollisionShape2D" parent="Walls"]
@@ -41,61 +41,58 @@ shape = SubResource("RectangleShape2D_s2mji")
 position = Vector2(1183, 298.5)
 shape = SubResource("RectangleShape2D_bbyqf")
 
+[node name="background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 304)
+scale = Vector2(4.49973, 4.09173)
+texture = ExtResource("2_bbyqf")
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 149.825)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(574, 737)
+scale = Vector2(4.5, 3.09091)
+texture = ExtResource("3_s1lr2")
+region_enabled = true
+region_rect = Rect2(0, 152, 256, 88)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="bullet" type="Label" parent="CanvasLayer"]
-offset_left = 13.0
-offset_top = 595.0
-offset_right = 125.0
-offset_bottom = 651.0
-scale = Vector2(1, 0.843072)
-text = "Bullets: "
-vertical_alignment = 1
+offset_left = 104.0
+offset_top = 544.0
+offset_right = 216.0
+offset_bottom = 600.0
 
 [node name="round" type="Label" parent="CanvasLayer"]
-offset_left = 16.0
-offset_top = 572.0
-offset_right = 75.0
-offset_bottom = 595.0
-scale = Vector2(0.710697, 0.87091)
-text = "Round:"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_left = 184.0
+offset_top = 504.0
+offset_right = 224.0
+offset_bottom = 527.0
 
 [node name="score" type="Label" parent="CanvasLayer"]
-offset_left = 991.0
-offset_top = 595.0
-offset_right = 1136.0
-offset_bottom = 650.0
-scale = Vector2(1.04302, 0.722237)
-text = "SCORE: "
-vertical_alignment = 1
+offset_left = 864.0
+offset_top = 544.0
+offset_right = 1009.0
+offset_bottom = 599.0
+scale = Vector2(1.47394, 1.08475)
+horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
 
 [node name="Laugh_mob" parent="." instance=ExtResource("5_fir65")]
+visible = false
 position = Vector2(552, 456)
 scale = Vector2(5.57942, 3.71595)
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_fxj5q")
-volume_db = 1.0
-autoplay = true
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="Graphics_UI" type="Node" parent="."]
-
-[node name="background" type="Sprite2D" parent="Graphics_UI"]
-z_index = -3
-position = Vector2(576, 321.5)
-scale = Vector2(1.125, 0.688819)
-texture = ExtResource("5_fxj5q")
-
-[node name="foreground" type="Sprite2D" parent="Graphics_UI"]
-z_index = 2
-position = Vector2(576, 208)
-scale = Vector2(2.25, 1.85654)
-texture = ExtResource("6_xvgtc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 591)
+shape = SubResource("RectangleShape2D_fxj5q")
+debug_color = Color(0.820542, 0.295704, 0.693077, 0.42)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
