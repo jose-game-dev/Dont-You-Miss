@@ -28,7 +28,7 @@ var score = 0:
 		score_node.text = "SCORE: " + str(value)
 
 # We preload enemies to work with them better
-@export var flying_mob_node: PackedScene
+
 @export var ground_ninja_node: PackedScene = preload("res://Scenes/Ground_ninja.tscn")
 @export var minion_demon_node: PackedScene = preload("res://Scenes/Minion_Demon.tscn")
 @export var cyclops_demon_node: PackedScene = preload("res://Scenes/Cyclops_Demon.tscn")
@@ -94,11 +94,10 @@ func _input(event):
 
 func _lose():
 	if $Timer.is_stopped():
-		find_child("Laugh_mob").dog_laugh()
 		for enemy in get_tree().get_current_scene().get_children():
 			if "input_pickable" in enemy:
 				enemy.input_pickable = false
 		$Timer.start()
 
-func _on_timer_timeout() -> void:
+func _on_timer_timeout():
 	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")

@@ -1,8 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://fd3ptjavp13d"]
+[gd_scene load_steps=9 format=3 uid="uid://fd3ptjavp13d"]
 
-[ext_resource type="PackedScene" uid="uid://dadvjd1ba2lac" path="res://Scenes/flying_mob.tscn" id="1_8juqs"]
 [ext_resource type="Script" uid="uid://3vj8c1am7xvi" path="res://Scenes/field.gd" id="1_s1lr2"]
-[ext_resource type="PackedScene" uid="uid://di08e8c366qo7" path="res://Scenes/laugh_mob.tscn" id="5_fir65"]
 [ext_resource type="Texture2D" uid="uid://dx0lnuph1mkyb" path="res://Assets/HeatgameBackG.png" id="5_fxj5q"]
 [ext_resource type="AudioStream" uid="uid://4ynxl0s3uukv" path="res://Music/Metal song cgsaug2025.mp3" id="6_fxj5q"]
 [ext_resource type="Texture2D" uid="uid://b6vi072ivak14" path="res://Assets/ForegroundGameJam.png" id="6_xvgtc"]
@@ -21,7 +19,6 @@ size = Vector2(62, 597)
 
 [node name="Field" type="Node2D"]
 script = ExtResource("1_s1lr2")
-flying_mob_node = ExtResource("1_8juqs")
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -74,10 +71,6 @@ vertical_alignment = 1
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
-
-[node name="Laugh_mob" parent="." instance=ExtResource("5_fir65")]
-position = Vector2(552, 456)
-scale = Vector2(5.57942, 3.71595)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_fxj5q")

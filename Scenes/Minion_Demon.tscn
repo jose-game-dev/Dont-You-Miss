@@ -115,9 +115,8 @@ shape = SubResource("RectangleShape2D_sytrm")
 position = Vector2(4, -2)
 scale = Vector2(1.26087, 1)
 sprite_frames = SubResource("SpriteFrames_sgokc")
-animation = &"Idle"
+animation = &"Death"
 autoplay = "Idle"
-frame_progress = 0.349254
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-6.5, 9.5)
