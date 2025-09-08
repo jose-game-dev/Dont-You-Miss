@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="HeatGame"
+config/name="DontYouMiss"
 run/main_scene="uid://cyojqven2qjuo"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://brxl8l5eyirui"
 
 [input]
 
